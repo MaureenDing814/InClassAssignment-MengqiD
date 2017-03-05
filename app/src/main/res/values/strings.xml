@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Student Record</string>
+    <string name="saved_username"></string>
+    <string name="saved_username_default">User</string>
 </resources>

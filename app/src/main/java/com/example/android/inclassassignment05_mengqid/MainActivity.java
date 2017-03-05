@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sharedPref = getPreferences(MODE_PRIVATE);
         String username = sharedPref.getString(key, getString(R.string.saved_username_default));
 
-        TextView usernameDisplay = (TextView) findViewById(R.id.username_display);
+        TextView usernameDisplay = (TextView) findViewById(R.id.welcome);
         usernameDisplay.setText("Welcome, " + username + "!");
 
     }
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
         String username = editText.getText().toString();
         SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(R.string.saved_username, username);
+        editor.putString(getString(R.string.saved_username), username);
         editor.commit();
 
         editText.setText("");
