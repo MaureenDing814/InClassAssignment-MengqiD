@@ -88,6 +88,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void changeName(View view)
+    {
+        EditText editText = (EditText)findViewById()
+    }
 
 
 }

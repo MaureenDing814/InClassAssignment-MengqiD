@@ -12,10 +12,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#3b6aa0"
-        android:paddingBottom="5dp"
+        android:paddingBottom="0dp"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
-        android:paddingTop="5dp"
+        android:paddingTop="0dp"
         android:src="@drawable/title" />
 
     <TextView
@@ -24,23 +24,39 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:text="Maureen, welcome to the student information system. Please enter the information below:"
         android:textColor="@android:color/white"
         android:textSize="18dp"
         android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/change_name"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
-        android:padding="15dp"
-        android:background="#3b6aa0"
-        android:onClick="changeName"
-        android:text="Change Username"
-        android:textColor="@android:color/white" />
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="16dp"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp">
+
+        <EditText
+            android:id="@+id/user_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:hint="Enter New Username" />
+
+        <Button
+            android:id="@+id/change_name"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:background="#3b6aa0"
+            android:onClick="changeName"
+            android:padding="10dp"
+            android:text="Change Username"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
@@ -153,9 +169,8 @@
         <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#c9d6e4"
             android:layout_marginRight="16dp"
-            >
+            android:background="#c9d6e4">
 
             <RadioButton
                 android:id="@+id/graduate"
@@ -184,16 +199,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:orientation="horizontal"
-        android:layout_gravity="center">
+        android:orientation="horizontal">
 
         <Button
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
+            android:layout_weight="1"
             android:background="#3b6aa0"
             android:onClick="save"
             android:text="Submit"
