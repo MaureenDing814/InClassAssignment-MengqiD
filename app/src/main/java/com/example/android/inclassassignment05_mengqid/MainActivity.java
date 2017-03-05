@@ -1,6 +1,7 @@
 package com.example.android.inclassassignment05_mengqid;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,6 +24,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        String key = getString(R.string.saved_username);
+
+        SharedPreferences sharedPref = getPreferences(MODE_PRIVATE);
+        String username = sharedPref.getString(key, getString(R.string.saved_username_default));
+
+        TextView usernameDisplay = (TextView) findViewById(R.id.username_display);
+        usernameDisplay.setText("Welcome, " + username + "!");
+
     }
 
 
@@ -90,7 +100,17 @@ public class MainActivity extends AppCompatActivity {
 
     public void changeName(View view)
     {
-        EditText editText = (EditText)findViewById()
+        EditText editText = (EditText)findViewById(R.id.user_name);
+        String username = editText.getText().toString();
+        SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(R.string.saved_username, username);
+        editor.commit();
+
+        editText.setText("");
+        TextView usernameDisplay = (TextView) findViewById(R.id.welcome);
+        usernameDisplay.setText(username + ", welcome to the student information system. Please enter the information below:");
+
     }
 
 
